@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 using System.Data;
-using System.Timers;
+using System.Windows;
 using System.Windows.Input;
 
 namespace Proj2.ViewModel
@@ -10,6 +10,18 @@ namespace Proj2.ViewModel
         private Model.Product _product;
 
         private Repository.Repo _repo;
+
+        private string _productName;
+        
+        private string _code;
+
+        private int _quantity;
+
+        private string _explanation;
+
+        private string _brand;
+
+        private string _nowUser;
 
         private string _seletedImage;
 
@@ -26,6 +38,9 @@ namespace Proj2.ViewModel
             // SelectedImage = "No_Picture";
 
             SearchCommand = new Command.Command(FilterData);
+            //AddCommand = new Command.Command(AddProduct);
+            UpdateCommand = new Command.Command(UpdateProduct);
+            DelCommand = new Command.Command(DeleteProduct);
 
             LoadData();
         }
@@ -63,16 +78,76 @@ namespace Proj2.ViewModel
             }
         }
 
-        public string SelectedImage
+        public string ProductName
         {
-            get => _seletedImage;
+            get => _productName;
             set
             {
-                _seletedImage = value;
-                OnPropertyChanged(nameof(SelectedImage));
-                UpdateImage();
+                _productName = value;
+                OnPropertyChanged(nameof(ProductName));
             }
         }
+
+        public string Code
+        {
+            get => _code;
+            set
+            {
+                _code = value;
+                OnPropertyChanged(nameof(Code));
+            }
+        }
+
+        public int Quantity
+        {
+            get => _quantity;
+            set
+            {
+                _quantity = value;
+                OnPropertyChanged(nameof(Quantity));
+            }
+        }
+
+        public string Explanation
+        {
+            get => _explanation;
+            set
+            {
+                _explanation = value;
+                OnPropertyChanged(nameof(Explanation));
+            }
+        }
+
+        public string Brand
+        {
+            get => _brand;
+            set
+            {
+                _brand = value;
+                OnPropertyChanged(nameof(Brand));
+            }
+        }
+
+        public string NowUser
+        {
+            get => _nowUser;
+            set
+            {
+                _nowUser = value;
+                OnPropertyChanged(nameof(NowUser));
+            }
+        }
+
+        //public string SelectedImage
+        //{
+        //    get => _seletedImage;
+        //    set
+        //    {
+        //        _seletedImage = value;
+        //        OnPropertyChanged(nameof(SelectedImage));
+        //        UpdateImage();
+        //    }
+        //}
 
         private void UpdateImage()
         {
@@ -120,6 +195,60 @@ namespace Proj2.ViewModel
                 }
             }
         }
+
+        private void AddProduct(object parameter)
+        {
+            // 입력된 값 확인
+            //MessageBox.Show($"ProductName: {ProductName}, Code: {Code}, Quantity: {Quantity}, Explanation: {Explanation}, Brand: {Brand}, NowUser: {NowUser}");
+
+            //if (string.IsNullOrWhiteSpace(ProductName) || string.IsNullOrWhiteSpace(Code) || Quantity <= 0)
+            //{
+            //    MessageBox.Show("모든 필드를 정확히 입력해주세요.");
+            //    return;
+            //}
+
+            //bool result = _repo.AddData(ProductName, Code, Quantity, Explanation, Brand, NowUser);
+            //if (result)
+            //{
+            //    MessageBox.Show("제품이 추가되었습니다.");
+            //    LoadData();  // 데이터 갱신
+            //}
+            //else
+            //{
+            //    MessageBox.Show("데이터 추가에 실패했습니다.");
+            //}
+        }
+
+        private void UpdateProduct(object parameter)
+        {
+            
+        }
+
+
+        private void DeleteProduct(object parameter)
+        {
+            if (SelectedProduct != null)
+            {
+                var productCode = SelectedProduct["Code"].ToString();  // 삭제할 제품의 고유 코드 가져오기
+
+                bool result = _repo.DeleteData(productCode); // Repository의 DeleteData 메서드를 호출하여 DB에서 삭제
+
+                if (result)
+                {
+                    MessageBox.Show("제품이 삭제되었습니다.");
+                    LoadData(); // 데이터를 다시 로드하여 UI에 반영
+                }
+                else
+                {
+                    MessageBox.Show("데이터 삭제에 실패했습니다.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("삭제할 제품을 선택해주세요.");
+            }
+        }
+
 
         public event PropertyChangedEventHandler? PropertyChanged;
 

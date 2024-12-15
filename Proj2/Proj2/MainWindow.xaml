@@ -20,10 +20,10 @@
             <RowDefinition Height="0.2*" />
         </Grid.RowDefinitions>
 
-        <DataGrid ItemsSource="{Binding DV_1}" Margin="10,10,10,10" AutoGenerateColumns="False"  
+        <DataGrid ItemsSource="{Binding DV_1}" SelectedItem="{Binding SelectedProduct}" Margin="10,10,10,10" AutoGenerateColumns="False"  
                   HorizontalAlignment="Center">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="품명" Binding="{Binding Path=ProductName}" Width="160"  IsReadOnly="True">
+                <DataGridTextColumn Header="품명" Binding="{Binding Path=ProductName, UpdateSourceTrigger=PropertyChanged}" Width="160"  IsReadOnly="False">
                     <DataGridTextColumn.ElementStyle>
                         <Style TargetType="TextBlock">
                             <Setter Property="HorizontalAlignment" Value="Center" />
@@ -31,7 +31,7 @@
                         </Style>
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
-                <DataGridTextColumn Header="물품 코드" Binding="{Binding Path=Code}" Width="80" IsReadOnly="True">
+                <DataGridTextColumn Header="물품 코드" Binding="{Binding Path=Code, UpdateSourceTrigger=PropertyChanged}" Width="80" IsReadOnly="False">
                     <DataGridTextColumn.ElementStyle>
                         <Style TargetType="TextBlock">
                             <Setter Property="HorizontalAlignment" Value="Center" />
@@ -39,7 +39,7 @@
                         </Style>
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
-                <DataGridTextColumn Header="수량" Binding="{Binding Path=Quantity}" Width="40" >
+                <DataGridTextColumn Header="수량" Binding="{Binding Path=Quantity, UpdateSourceTrigger=PropertyChanged}" Width="40" >
                     <DataGridTextColumn.ElementStyle>
                         <Style TargetType="TextBlock">
                             <Setter Property="HorizontalAlignment" Value="Center" />
@@ -47,7 +47,7 @@
                         </Style>
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
-                <DataGridTextColumn Header="설명" Binding="{Binding Path=Explanation}" Width="250" >
+                <DataGridTextColumn Header="설명" Binding="{Binding Path=Explanation, UpdateSourceTrigger=PropertyChanged}" Width="250" >
                     <DataGridTextColumn.ElementStyle>
                         <Style TargetType="TextBlock">
                             <Setter Property="HorizontalAlignment" Value="Center" />
@@ -55,7 +55,7 @@
                         </Style>
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
-                <DataGridTextColumn Header="브랜드" Binding="{Binding Path=Brand}" Width="80" IsReadOnly="True">
+                <DataGridTextColumn Header="브랜드" Binding="{Binding Path=Brand, UpdateSourceTrigger=PropertyChanged}" Width="80" IsReadOnly="False">
                     <DataGridTextColumn.ElementStyle>
                         <Style TargetType="TextBlock">
                             <Setter Property="HorizontalAlignment" Value="Center" />
@@ -63,7 +63,7 @@
                         </Style>
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
-                <DataGridTextColumn Header="현재 사용자" Binding="{Binding Path=NowUser}" Width="80" >
+                <DataGridTextColumn Header="현재 사용자" Binding="{Binding Path=NowUser, UpdateSourceTrigger=PropertyChanged}" Width="80" >
                     <DataGridTextColumn.ElementStyle>
                         <Style TargetType="TextBlock">
                             <Setter Property="HorizontalAlignment" Value="Center" />
@@ -75,19 +75,19 @@
         </DataGrid>
 
         <!-- 사진 영역 -->
-        <GroupBox Grid.Column="1" Header="제품사진" Margin="10" >
+        <!--<GroupBox Grid.Column="1" Header="제품사진" Margin="10" >
             <Image Source="{Binding SeletedImage}" Margin="15,5" />
-        </GroupBox>
+        </GroupBox>-->
         
         <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="28,20,0,0" Grid.Row="1" TextWrapping="Wrap" Text="{Binding SearchProduct, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="120"/>
         <Button Grid.Column="1" Content="조회" HorizontalAlignment="Left" Margin="148,20,0,0" Grid.Row="1" VerticalAlignment="Top" Height="18"
                 Command="{Binding SearchCommand}"/>
         <!--<Button Grid.Column="1" Content="추가" HorizontalAlignment="Left" Margin="26,58,0,0" Grid.Row="1" VerticalAlignment="Top"
-                Command="{Binding AddCommand}"/>
+                Command="{Binding AddCommand}"/>-->
         <Button Grid.Column="1" Content="수정" HorizontalAlignment="Left" Margin="88,58,0,0" Grid.Row="1" VerticalAlignment="Top"
                 Command="{Binding UpdateCommand}"/>
         <Button Grid.Column="1" Content="삭제" HorizontalAlignment="Left" Margin="148,58,0,0" Grid.Row="1" VerticalAlignment="Top"
-                Command="{Binding DelCommand}"/>-->
+                Command="{Binding DelCommand}"/>
 
     </Grid>
 </Window>
