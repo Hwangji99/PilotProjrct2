@@ -35,42 +35,6 @@ namespace Proj2.Repository
             }
         }
 
-        //public bool AddData(string productName, string code, int quantity, string explanation, string brand, string nowUser)
-        //{
-        //    try
-        //    {
-        //        // 파라미터 확인
-        //        MessageBox.Show($"ProductName: {productName}, Code: {code}, Quantity: {quantity}, Explanation: {explanation}, Brand: {brand}, NowUser: {nowUser}");
-
-        //        using (var conn = new SqlConnection(_connString))
-        //        {
-        //            conn.Open();
-        //            var query = "INSERT INTO Product (ProductName, Code, Quantity, Explanation, Brand, NowUser) " +
-        //                        "VALUES (@ProductName, @Code, @Quantity, @Explanation, @Brand, @NowUser)";
-        //            using (var cmd = new SqlCommand(query, conn))
-        //            {
-        //                cmd.Parameters.AddWithValue("@ProductName", productName);
-        //                cmd.Parameters.AddWithValue("@Code", code);
-        //                cmd.Parameters.AddWithValue("@Quantity", quantity);
-        //                cmd.Parameters.AddWithValue("@Explanation", explanation);
-        //                cmd.Parameters.AddWithValue("@Brand", brand);
-        //                cmd.Parameters.AddWithValue("@NowUser", nowUser);
-
-        //                cmd.ExecuteNonQuery();
-        //            }
-        //        }
-
-        //        return true; // 성공
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show("Error: " + ex.Message);
-        //        return false; // 실패
-        //    }
-        //}
-
-
-
         public bool DeleteData(string productCode)
         {
             try

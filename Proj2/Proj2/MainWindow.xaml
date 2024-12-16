@@ -20,74 +20,68 @@
             <RowDefinition Height="0.2*" />
         </Grid.RowDefinitions>
 
-        <DataGrid ItemsSource="{Binding DV_1}" SelectedItem="{Binding SelectedProduct}" Margin="10,10,10,10" AutoGenerateColumns="False"  
+        <DataGrid ItemsSource="{Binding DV_1}" SelectedItem="{Binding SelectedProduct}" Margin="0,25,0,10" AutoGenerateColumns="False"  
                   HorizontalAlignment="Center">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="품명" Binding="{Binding Path=ProductName, UpdateSourceTrigger=PropertyChanged}" Width="160"  IsReadOnly="False">
-                    <DataGridTextColumn.ElementStyle>
-                        <Style TargetType="TextBlock">
-                            <Setter Property="HorizontalAlignment" Value="Center" />
-                            <Setter Property="VerticalAlignment" Value="Center" />
-                        </Style>
-                    </DataGridTextColumn.ElementStyle>
-                </DataGridTextColumn>
-                <DataGridTextColumn Header="물품 코드" Binding="{Binding Path=Code, UpdateSourceTrigger=PropertyChanged}" Width="80" IsReadOnly="False">
-                    <DataGridTextColumn.ElementStyle>
-                        <Style TargetType="TextBlock">
-                            <Setter Property="HorizontalAlignment" Value="Center" />
-                            <Setter Property="VerticalAlignment" Value="Center" />
-                        </Style>
-                    </DataGridTextColumn.ElementStyle>
-                </DataGridTextColumn>
-                <DataGridTextColumn Header="수량" Binding="{Binding Path=Quantity, UpdateSourceTrigger=PropertyChanged}" Width="40" >
-                    <DataGridTextColumn.ElementStyle>
-                        <Style TargetType="TextBlock">
-                            <Setter Property="HorizontalAlignment" Value="Center" />
-                            <Setter Property="VerticalAlignment" Value="Center" />
-                        </Style>
-                    </DataGridTextColumn.ElementStyle>
-                </DataGridTextColumn>
-                <DataGridTextColumn Header="설명" Binding="{Binding Path=Explanation, UpdateSourceTrigger=PropertyChanged}" Width="250" >
-                    <DataGridTextColumn.ElementStyle>
-                        <Style TargetType="TextBlock">
-                            <Setter Property="HorizontalAlignment" Value="Center" />
-                            <Setter Property="VerticalAlignment" Value="Center" />
-                        </Style>
-                    </DataGridTextColumn.ElementStyle>
-                </DataGridTextColumn>
-                <DataGridTextColumn Header="브랜드" Binding="{Binding Path=Brand, UpdateSourceTrigger=PropertyChanged}" Width="80" IsReadOnly="False">
-                    <DataGridTextColumn.ElementStyle>
-                        <Style TargetType="TextBlock">
-                            <Setter Property="HorizontalAlignment" Value="Center" />
-                            <Setter Property="VerticalAlignment" Value="Center" />
-                        </Style>
-                    </DataGridTextColumn.ElementStyle>
-                </DataGridTextColumn>
-                <DataGridTextColumn Header="현재 사용자" Binding="{Binding Path=NowUser, UpdateSourceTrigger=PropertyChanged}" Width="80" >
-                    <DataGridTextColumn.ElementStyle>
-                        <Style TargetType="TextBlock">
-                            <Setter Property="HorizontalAlignment" Value="Center" />
-                            <Setter Property="VerticalAlignment" Value="Center" />
-                        </Style>
-                    </DataGridTextColumn.ElementStyle>
-                </DataGridTextColumn>
+                <DataGridTextColumn Header="품명" Binding="{Binding ProductName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="160"/>
+                <DataGridTextColumn Header="물품 코드" Binding="{Binding Code, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="80" />
+                <DataGridTextColumn Header="수량" Binding="{Binding Quantity, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="40" />
+                <DataGridTextColumn Header="설명" Binding="{Binding Explanation, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="250" />
+                <DataGridTextColumn Header="브랜드" Binding="{Binding Brand, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="80" />
+                <DataGridTextColumn Header="현재 사용자" Binding="{Binding NowUser, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="80" />
             </DataGrid.Columns>
         </DataGrid>
 
-        <!-- 사진 영역 -->
-        <!--<GroupBox Grid.Column="1" Header="제품사진" Margin="10" >
-            <Image Source="{Binding SeletedImage}" Margin="15,5" />
-        </GroupBox>-->
-        
-        <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="28,20,0,0" Grid.Row="1" TextWrapping="Wrap" Text="{Binding SearchProduct, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="120"/>
-        <Button Grid.Column="1" Content="조회" HorizontalAlignment="Left" Margin="148,20,0,0" Grid.Row="1" VerticalAlignment="Top" Height="18"
-                Command="{Binding SearchCommand}"/>
-        <!--<Button Grid.Column="1" Content="추가" HorizontalAlignment="Left" Margin="26,58,0,0" Grid.Row="1" VerticalAlignment="Top"
-                Command="{Binding AddCommand}"/>-->
-        <Button Grid.Column="1" Content="수정" HorizontalAlignment="Left" Margin="88,58,0,0" Grid.Row="1" VerticalAlignment="Top"
-                Command="{Binding UpdateCommand}"/>
-        <Button Grid.Column="1" Content="삭제" HorizontalAlignment="Left" Margin="148,58,0,0" Grid.Row="1" VerticalAlignment="Top"
-                Command="{Binding DelCommand}"/>
+        <GroupBox Grid.Column="1" Margin="10">
+            <GroupBox.Header>
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="C:/Users/User/Documents/Dev/PilotProjrct2/Proj2/Proj2/Images/picture.png" Width="16" Height="16"/>
+                    <TextBlock Text="제품사진" VerticalAlignment="Center" Margin="5"/>
+                </StackPanel>
+            </GroupBox.Header>
 
+            <Image Source="{Binding SelectedProductImagePath}" Height="296" VerticalAlignment="Top" HorizontalAlignment="Left" Width="188"/>
+        </GroupBox>
+
+        <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="26,10,0,0" Grid.Row="1" TextWrapping="Wrap" Text="{Binding SearchProduct, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="122" Height="28"/>
+        <Button Grid.Column="1" HorizontalAlignment="Left" Margin="148,10,0,0" Grid.Row="1" VerticalAlignment="Top" Height="28"
+                Command="{Binding SearchCommand}" Width="60">
+            <Button.Content>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Image Source="C:/Users/User/Documents/Dev/PilotProjrct2/Proj2/Proj2/Images/search.png" Width="16" Height="16"/>
+                    <TextBlock Text="조회" VerticalAlignment="Center" Margin="5,0,0,0"/>
+                </StackPanel>
+            </Button.Content>
+        </Button>
+
+        <Button Grid.Column="1" HorizontalAlignment="Left" Margin="26,53,0,0" Grid.Row="1" VerticalAlignment="Top"
+                Command="{Binding AddCommand}" Height="25" Width="57">
+            <Button.Content>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Image Source="C:/Users/User/Documents/Dev/PilotProjrct2/Proj2/Proj2/Images/plus.png" Width="16" Height="16"/>
+                    <TextBlock Text="추가" VerticalAlignment="Center" Margin="5,0,0,0"/>
+                </StackPanel>
+            </Button.Content>
+        </Button>
+
+        <Button Grid.Column="1" HorizontalAlignment="Left" Margin="88,53,0,0" Grid.Row="1" VerticalAlignment="Top"
+                Command="{Binding UpdateCommand}" Height="25" Width="55">
+            <Button.Content>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Image Source="C:/Users/User/Documents/Dev/PilotProjrct2/Proj2/Proj2/Images/update.png" Width="16" Height="16"/>
+                    <TextBlock Text="수정" VerticalAlignment="Center" Margin="5,0,0,0"/>
+                </StackPanel>
+            </Button.Content>
+        </Button>
+
+        <Button Grid.Column="1" HorizontalAlignment="Left" Margin="148,53,0,0" Grid.Row="1" VerticalAlignment="Top"
+                Command="{Binding DelCommand}" Height="25" Width="54">
+            <Button.Content>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Image Source="C:/Users/User/Documents/Dev/PilotProjrct2/Proj2/Proj2/Images/delete.png" Width="16" Height="16"/>
+                    <TextBlock Text="삭제" VerticalAlignment="Center" Margin="5,0,0,0"/>
+                </StackPanel>
+            </Button.Content>
+        </Button>
     </Grid>
 </Window>

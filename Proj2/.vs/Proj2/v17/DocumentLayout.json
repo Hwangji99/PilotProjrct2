@@ -26,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
@@ -36,9 +36,21 @@
               "RelativeDocumentMoniker": "Proj2\\Repository\\Repo.cs",
               "ToolTip": "C:\\Users\\User\\Documents\\Dev\\PilotProjrct2\\Proj2\\Proj2\\Repository\\Repo.cs",
               "RelativeToolTip": "Proj2\\Repository\\Repo.cs",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAYwEcAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-12T06:20:47.487Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\User\\Documents\\Dev\\PilotProjrct2\\Proj2\\Proj2\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "Proj2\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\User\\Documents\\Dev\\PilotProjrct2\\Proj2\\Proj2\\MainWindow.xaml",
+              "RelativeToolTip": "Proj2\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-12-11T05:56:17.538Z",
               "EditorCaption": ""
             },
             {
@@ -49,7 +61,7 @@
               "RelativeDocumentMoniker": "Proj2\\ViewModel\\MainViewModel.cs",
               "ToolTip": "C:\\Users\\User\\Documents\\Dev\\PilotProjrct2\\Proj2\\Proj2\\ViewModel\\MainViewModel.cs",
               "RelativeToolTip": "Proj2\\ViewModel\\MainViewModel.cs",
-              "ViewState": "AgIAALEAAAAAAAAAAAA0wL0AAAARAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAMEAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-11T05:58:51.327Z",
               "EditorCaption": ""
@@ -64,20 +76,7 @@
               "RelativeToolTip": "Proj2\\Model\\Product.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAswAYAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-11T05:58:27.868Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "MainWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\User\\Documents\\Dev\\PilotProjrct2\\Proj2\\Proj2\\MainWindow.xaml",
-              "RelativeDocumentMoniker": "Proj2\\MainWindow.xaml",
-              "ToolTip": "C:\\Users\\User\\Documents\\Dev\\PilotProjrct2\\Proj2\\Proj2\\MainWindow.xaml",
-              "RelativeToolTip": "Proj2\\MainWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-12-11T05:56:17.538Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-11T05:58:27.868Z"
             }
           ]
         }
