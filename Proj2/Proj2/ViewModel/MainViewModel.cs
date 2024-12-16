@@ -28,6 +28,8 @@ namespace Proj2.ViewModel
 
             // Command 객체 초기화 (각 버튼에 해당하는 동작 지정)
             SearchCommand = new Command.Command(FilterData);
+            AddCommand = new Command.Command(AddProduct);
+            UpdateCommand = new Command.Command(UpdateProduct);
             DelCommand = new Command.Command(DeleteProduct);
 
             LoadData();  // 데이터 로딩
@@ -156,7 +158,40 @@ namespace Proj2.ViewModel
             }
         }
 
-        
+        private void AddProduct(object parameter)
+        {
+
+        }
+
+        private void UpdateProduct(object parameter)
+        {
+            if (SelectedProduct != null) // 데이터그리드에서 제품이 선택된 경우
+            {
+                string productCode = SelectedProduct["Code"].ToString(); // 제품 코드
+                string productName = SelectedProduct["ProductName"].ToString(); // 제품 이름
+                int quantity = int.Parse(SelectedProduct["Quantity"].ToString()); // 제품 수량
+                string explanation = SelectedProduct["Explanation"].ToString(); // 제품 설명
+                string brand = SelectedProduct["Brand"].ToString(); // 제품 브랜드
+                string nowUser = SelectedProduct["NowUser"].ToString(); // 현재 사용자
+
+                // Repository의 UpdateData 메서드 호출
+                bool result = _repo.UpdateData(productCode, productName, quantity, explanation, brand, nowUser);
+
+                if (result)
+                {
+                    MessageBox.Show("제품 정보가 수정되었습니다.");
+                    LoadData(); // 데이터 로드하여 데이터그리드 갱신
+                }
+                else
+                {
+                    MessageBox.Show("제품 정보 수정에 실패했습니다.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("수정할 제품을 선택해주세요.");
+            }
+        }
 
         private void DeleteProduct(object parameter)
         {

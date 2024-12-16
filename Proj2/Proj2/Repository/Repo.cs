@@ -35,6 +35,39 @@ namespace Proj2.Repository
             }
         }
 
+        public bool UpdateData(string productCode, string productName, int quantity, string explanation, string brand, string nowUser)
+        {
+            try
+            {
+                using (var connection = new SqlConnection(_connString))
+                {
+                    string query = @"UPDATE Product
+                             SET ProductName = @ProductName, Quantity = @Quantity,
+                                 Explanation = @Explanation, Brand = @Brand, NowUser = @NowUser
+                             WHERE Code = @ProductCode";
+
+                    using (var command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@ProductCode", productCode);
+                        command.Parameters.AddWithValue("@ProductName", productName);
+                        command.Parameters.AddWithValue("@Quantity", quantity);
+                        command.Parameters.AddWithValue("@Explanation", explanation);
+                        command.Parameters.AddWithValue("@Brand", brand);
+                        command.Parameters.AddWithValue("@NowUser", nowUser);
+
+                        connection.Open();
+                        int rowsAffected = command.ExecuteNonQuery();
+                        return rowsAffected > 0; // 업데이트가 성공적으로 이루어졌는지 확인
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"데이터 수정 중 오류가 발생했습니다: {ex.Message}");
+                return false;
+            }
+        }
+
         public bool DeleteData(string productCode)
         {
             try

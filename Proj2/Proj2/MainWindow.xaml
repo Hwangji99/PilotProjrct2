@@ -20,15 +20,15 @@
             <RowDefinition Height="0.2*" />
         </Grid.RowDefinitions>
 
-        <DataGrid ItemsSource="{Binding DV_1}" SelectedItem="{Binding SelectedProduct}" Margin="0,25,0,10" AutoGenerateColumns="False"  
+        <DataGrid ItemsSource="{Binding DV_1}" SelectedItem="{Binding SelectedProduct}" SelectionMode="Single" IsReadOnly="False" Margin="0,25,0,10" AutoGenerateColumns="False"  
                   HorizontalAlignment="Center">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="품명" Binding="{Binding ProductName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="160"/>
-                <DataGridTextColumn Header="물품 코드" Binding="{Binding Code, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="80" />
-                <DataGridTextColumn Header="수량" Binding="{Binding Quantity, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="40" />
-                <DataGridTextColumn Header="설명" Binding="{Binding Explanation, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="250" />
-                <DataGridTextColumn Header="브랜드" Binding="{Binding Brand, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="80" />
-                <DataGridTextColumn Header="현재 사용자" Binding="{Binding NowUser, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="80" />
+                <DataGridTextColumn Header="품명" Binding="{Binding ProductName, UpdateSourceTrigger=PropertyChanged}" Width="160"/>
+                <DataGridTextColumn Header="물품 코드" Binding="{Binding Code, UpdateSourceTrigger=PropertyChanged}" Width="80" />
+                <DataGridTextColumn Header="수량" Binding="{Binding Quantity, UpdateSourceTrigger=PropertyChanged}" Width="40" />
+                <DataGridTextColumn Header="설명" Binding="{Binding Explanation, UpdateSourceTrigger=PropertyChanged}" Width="250" />
+                <DataGridTextColumn Header="브랜드" Binding="{Binding Brand, UpdateSourceTrigger=PropertyChanged}" Width="80" />
+                <DataGridTextColumn Header="현재 사용자" Binding="{Binding NowUser, UpdateSourceTrigger=PropertyChanged}" Width="80" />
             </DataGrid.Columns>
         </DataGrid>
 
