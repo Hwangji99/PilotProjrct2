@@ -35,6 +35,38 @@ namespace Proj2.Repository
             }
         }
 
+        public bool AddtData(string productName, string code, int quantity, string explanation, string brand, string nowUser)
+        {
+            try
+            {
+                using (var connection = new SqlConnection(_connString))
+                {
+                    string query = @"
+                INSERT INTO Product (ProductName, Code, Quantity, Explanation, Brand, NowUser)
+                VALUES (@ProductName, @Code, @Quantity, @Explanation, @Brand, @NowUser)";
+
+                    using (var command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@ProductName", productName);
+                        command.Parameters.AddWithValue("@Code", code);
+                        command.Parameters.AddWithValue("@Quantity", quantity);
+                        command.Parameters.AddWithValue("@Explanation", explanation);
+                        command.Parameters.AddWithValue("@Brand", brand);
+                        command.Parameters.AddWithValue("@NowUser", nowUser);
+
+                        connection.Open();
+                        int rowsAffected = command.ExecuteNonQuery();
+                        return rowsAffected > 0; // 성공하면 true 반환
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"데이터 삽입 중 오류 발생: {ex.Message}");
+                return false;
+            }
+        }
+
         public bool UpdateData(string productCode, string productName, int quantity, string explanation, string brand, string nowUser)
         {
             try

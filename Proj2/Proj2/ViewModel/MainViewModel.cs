@@ -10,13 +10,6 @@ namespace Proj2.ViewModel
         private Model.Product _product;  // Product 모델 객체
         private Repository.Repo _repo;    // Repository 객체, 데이터베이스 작업을 위한 객체
 
-        private string _productName;  // 제품 이름
-        private string _code;         // 제품 코드
-        private int _quantity = 1;    // 제품 수량
-        private string _explanation;  // 제품 설명
-        private string _brand;        // 제품 브랜드
-        private string _nowUser;      // 현재 사용자
-
         private DataRowView _selectedProduct;  // 선택된 제품
 
         private string _connstring = "Server=localhost;Database=Product;User Id=project;Password=wlghks8941@;Encrypt=False;";  // DB 연결 문자열
@@ -68,68 +61,6 @@ namespace Proj2.ViewModel
             }
         }
 
-        public string ProductName   // 제품 이름 속성
-        {
-            get => _productName;
-            set
-            {
-                _productName = value;   // 제품 이름 변경
-                OnPropertyChanged(nameof(ProductName));     // 속성 변경을 UI에 알려줌
-            }
-        }
-
-        public string Code
-        {
-            get => _code;
-            set
-            {
-                _code = value;
-                OnPropertyChanged(nameof(Code));
-            }
-        }
-
-        public int Quantity
-        {
-            get => _quantity;
-            set
-            {
-                _quantity = value;
-                OnPropertyChanged(nameof(Quantity));
-            }
-        }
-
-        public string Explanation
-        {
-            get => _explanation;
-            set
-            {
-                _explanation = value;
-                OnPropertyChanged(nameof(Explanation));
-            }
-        }
-
-        public string Brand
-        {
-            get => _brand;
-            set
-            {
-                _brand = value;
-                OnPropertyChanged(nameof(Brand));
-            }
-        }
-
-        public string NowUser
-        {
-            get => _nowUser;
-            set
-            {
-                _nowUser = value;
-                OnPropertyChanged(nameof(NowUser));
-            }
-        }
-
-        
-
         public string SearchProduct { get; set; }       // 검색할 제품명을 나타내는 속성
 
         // Search, Add, Update, Delete 작업을 위한 ICommand 속성들
@@ -160,7 +91,33 @@ namespace Proj2.ViewModel
 
         private void AddProduct(object parameter)
         {
+            // 새로운 제품 데이터를 사용하여 AddData 메서드 호출
+            if (SelectedProduct != null)
+            {
+                string productName = SelectedProduct["ProductName"].ToString();
+                string productCode = SelectedProduct["Code"].ToString();
+                int quantity = int.Parse(SelectedProduct["Quantity"].ToString());
+                string explanation = SelectedProduct["Explanation"].ToString();
+                string brand = SelectedProduct["Brand"].ToString();
+                string nowUser = SelectedProduct["NowUser"].ToString();
 
+                // Repository의 AddtData 메서드 호출
+                bool result = _repo.AddtData(productName, productCode, quantity, explanation, brand, nowUser);
+
+                if (result)
+                {
+                    MessageBox.Show("제품이 추가되었습니다.");
+                    LoadData(); // 데이터 로딩하여 데이터그리드 갱신
+                }
+                else
+                {
+                    MessageBox.Show("제품 추가에 실패했습니다.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("추가할 제품 정보를 입력해주세요.");
+            }
         }
 
         private void UpdateProduct(object parameter)
