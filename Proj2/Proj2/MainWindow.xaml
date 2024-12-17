@@ -43,7 +43,8 @@
             <Image Source="{Binding SelectedProductImagePath}" Height="296" VerticalAlignment="Top" HorizontalAlignment="Left" Width="188"/>
         </GroupBox>
 
-        <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="26,10,0,0" Grid.Row="1" TextWrapping="Wrap" Text="{Binding SearchProduct, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="122" Height="28"/>
+        <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="26,10,0,0" Grid.Row="1" TextWrapping="Wrap" Text="{Binding SearchProduct, 
+            UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="122" Height="28"/>
         <Button Grid.Column="1" HorizontalAlignment="Left" Margin="148,10,0,0" Grid.Row="1" VerticalAlignment="Top" Height="28"
                 Command="{Binding SearchCommand}" Width="60">
             <Button.Content>

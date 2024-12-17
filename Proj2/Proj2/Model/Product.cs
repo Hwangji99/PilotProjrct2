@@ -1,5 +1,4 @@
-﻿using System.ComponentModel;
-using System.Data;
+﻿using System.Data;
 
 namespace Proj2.Model
 {

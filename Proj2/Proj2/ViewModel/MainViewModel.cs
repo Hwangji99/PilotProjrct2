@@ -59,9 +59,9 @@ namespace Proj2.ViewModel
             get => _selectedProduct;
             set
             {
-                _selectedProduct = value;   // 선택된 제품 변경
-                OnPropertyChanged(nameof(SelectedProduct));  // 속성 변경을 UI에 알려줌
-                OnPropertyChanged(nameof(SelectedProductImagePath)); // 이미지 경로도 변경된 것을 알려줌
+                _selectedProduct = value;   
+                OnPropertyChanged(nameof(SelectedProduct));  
+                OnPropertyChanged(nameof(SelectedProductImagePath)); 
             }
         }
 
