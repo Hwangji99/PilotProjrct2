@@ -7,12 +7,16 @@
       "RelativeMoniker": "D:0:0:{195D92F7-333C-4997-9665-CFCEBAEA637F}|Proj2\\Proj2.csproj|solutionrelative:proj2\\viewmodel\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{195D92F7-333C-4997-9665-CFCEBAEA637F}|Proj2\\Proj2.csproj|c:\\users\\user\\documents\\dev\\pilotprojrct2\\proj2\\proj2\\repository\\repo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{195D92F7-333C-4997-9665-CFCEBAEA637F}|Proj2\\Proj2.csproj|solutionrelative:proj2\\repository\\repo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{195D92F7-333C-4997-9665-CFCEBAEA637F}|Proj2\\Proj2.csproj|c:\\users\\user\\documents\\dev\\pilotprojrct2\\proj2\\proj2\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{195D92F7-333C-4997-9665-CFCEBAEA637F}|Proj2\\Proj2.csproj|solutionrelative:proj2\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{195D92F7-333C-4997-9665-CFCEBAEA637F}|Proj2\\Proj2.csproj|c:\\users\\user\\documents\\dev\\pilotprojrct2\\proj2\\proj2\\command\\command.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{195D92F7-333C-4997-9665-CFCEBAEA637F}|Proj2\\Proj2.csproj|solutionrelative:proj2\\command\\command.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{195D92F7-333C-4997-9665-CFCEBAEA637F}|Proj2\\Proj2.csproj|c:\\users\\user\\documents\\dev\\pilotprojrct2\\proj2\\proj2\\repository\\repo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{195D92F7-333C-4997-9665-CFCEBAEA637F}|Proj2\\Proj2.csproj|solutionrelative:proj2\\repository\\repo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{195D92F7-333C-4997-9665-CFCEBAEA637F}|Proj2\\Proj2.csproj|c:\\users\\user\\documents\\dev\\pilotprojrct2\\proj2\\proj2\\model\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -26,11 +30,23 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
+              "Title": "Command.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Documents\\Dev\\PilotProjrct2\\Proj2\\Proj2\\Command\\Command.cs",
+              "RelativeDocumentMoniker": "Proj2\\Command\\Command.cs",
+              "ToolTip": "C:\\Users\\User\\Documents\\Dev\\PilotProjrct2\\Proj2\\Proj2\\Command\\Command.cs",
+              "RelativeToolTip": "Proj2\\Command\\Command.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-17T09:34:17.148Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "Repo.cs",
               "DocumentMoniker": "C:\\Users\\User\\Documents\\Dev\\PilotProjrct2\\Proj2\\Proj2\\Repository\\Repo.cs",
               "RelativeDocumentMoniker": "Proj2\\Repository\\Repo.cs",
@@ -38,12 +54,11 @@
               "RelativeToolTip": "Proj2\\Repository\\Repo.cs",
               "ViewState": "AgIAAEoAAAAAAAAAAAAgwFEAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-12T06:20:47.487Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-12T06:20:47.487Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "C:\\Users\\User\\Documents\\Dev\\PilotProjrct2\\Proj2\\Proj2\\MainWindow.xaml",
               "RelativeDocumentMoniker": "Proj2\\MainWindow.xaml",
@@ -61,14 +76,14 @@
               "RelativeDocumentMoniker": "Proj2\\ViewModel\\MainViewModel.cs",
               "ToolTip": "C:\\Users\\User\\Documents\\Dev\\PilotProjrct2\\Proj2\\Proj2\\ViewModel\\MainViewModel.cs",
               "RelativeToolTip": "Proj2\\ViewModel\\MainViewModel.cs",
-              "ViewState": "AgIAAEkAAAAAAAAAAAAswFkAAAAnAAAAAAAAAA==",
+              "ViewState": "AgIAABIAAAAAAAAAAAAgwMsAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-11T05:58:51.327Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Product.cs",
               "DocumentMoniker": "C:\\Users\\User\\Documents\\Dev\\PilotProjrct2\\Proj2\\Proj2\\Model\\Product.cs",
               "RelativeDocumentMoniker": "Proj2\\Model\\Product.cs",
